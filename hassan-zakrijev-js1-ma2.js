@@ -8,8 +8,8 @@ myFunctionExpression();
 
 // question 2
 
-const button = document.querySelector(".btn");
-button.addEventListener("click", logClick);
+const ClicMekButton = document.querySelector(".btn");
+ClicMekButton.addEventListener("click", logClick);
 
 function logClick(){
     console.log("I was clicked");
@@ -26,8 +26,8 @@ function keyPress(event){
 
 // question 4
 
-const button02 = document.querySelector("button");
-button02.addEventListener("mouseover", addClass);
+const button = document.querySelector("button");
+button.addEventListener("mouseover", addClass);
 
 function addClass(event){
     event.target.classList.add("hover");
@@ -36,8 +36,8 @@ function addClass(event){
 
 // question 5
 
-const button03 = document.querySelector("[data-animal='dog']");
-button03.addEventListener("mouseout", removeClass);
+const button2 = document.querySelector("[data-animal='dog']");
+button2.addEventListener("mouseout", removeClass);
 
 function removeClass(event){
     event.target.classList.remove("hover");
@@ -45,15 +45,14 @@ function removeClass(event){
 }
 
 // question 6
+const animals = document.querySelectorAll("li");
 
-const litags = document.querySelectorAll("li");
+for (let i = 0; i < animals.length; i++) {
+    animals[i].addEventListener("mouseover", logTypeOfAnimal)
 
-for(let i = 0; i < litags.length; i++){
-    litags[i].addEventListener("mouseover", scanItems);
-}
-
-function scanItems(event){
-    console.log(event.target.dataset.animal);
+    function logTypeOfAnimal() {
+        console.dir(animals[i].dataset.animal);
+    }
 }
 
 // question 7
@@ -90,27 +89,27 @@ sheep.forEach(sheepNames);
 
 // question 9
 
-var timer = 0;
+var logTimer = 0;
 
-function logTime(){
+function logTimer(){
     console.log("hello");
    
-    if(timer === 5) {
+    if(counter === 5) {
         clearInterval(interval);
     }
     
-    timer++;
+    counter++;
     
 }
 
-const interval = setInterval(logTime, 500);
+const interval = setInterval(logTimer, 500);
 
 // question 10
 
-const placeholderText = document.querySelector("div.container");
+const container = document.querySelector("div.container");
 
 function updateText() {
-    placeholderText.innerText = "Text updated"
+    container.innerText = "Text updated"
 }
 
 setTimeout(updateText, 2000);
